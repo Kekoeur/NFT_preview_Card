@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="description" content="Exercice from Frontend Mentor - NFT previw card component">
+  <meta name="keywords" content="HTML, CSS, NFT preview card, Exercice, Frontend Mentor">
+  <meta name="author" content="GAUTHIER Christopher">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | NFT preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    :root {
+      --soft-blue: hsl(215, 51%, 70%);
+      --cyan: hsl(178, 100%, 50%);
+      --transparent-cyan: hsla(178, 100%, 50%, 0.3);
+      --very-dark-blue-main-bg: hsl(217, 54%, 11%);
+      --very-dark-blue-card-bg: hsl(216, 50%, 16%);
+      --very-dark-blue-line: hsl(215, 32%, 27%);
+      --white: hsl(0, 0%, 100%);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--very-dark-blue-main-bg);
+      font-family: 'Outfit', sans-serif;
+      font-size: 18px;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    main {
+      margin: 30px;
+      padding: 30px;
+      border-radius: 20px;
+      background-color: var(--very-dark-blue-card-bg);
+      max-width: 300px;
+    }
+
+    #nft-picture {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    p {
+      font-weight: 300;
+      color: var(--soft-blue);
+    }
+
+    .price, .time {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      font-size: 14px;
+    }
+
+    .price p {
+      font-weight: 600;
+      color: var(--cyan);
+      margin: 0;
+      padding: 0 5px;
+    }
+
+    .time p {
+      font-weight: 400;
+      margin: 0;
+      padding: 0 8px;
+    }
+
+    .sales {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    hr {
+      border: var(--very-dark-blue-line) 0.5px solid;
+      border-bottom: none;
+      margin: 14px 0;
+    }
+
+    .creator {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      font-size: 14px;
+    }
+
+    .creator p {
+      padding: 0 10px;
+      font-weight: 400;
+    }
+
+    .creator p a {
+      color: var(--white);
+    }
+
+    .creator img {
+      height: 3rem;
+      border: var(--white) 1px solid;
+      border-radius: 25px;
+    }
+
+    .creator p a:active, .name a:active, .creator p a:hover, .name a:hover {
+      color: var(--cyan);
+    }
+
+    #img-link:active, #img-link:hover {
+      background-color: var(--cyan);
+      background-image: url(./images/icon-view.svg);
+    }
+
+    .container {
+      display: flex;
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      transition: .3s ease;
+      background-color: var(--transparent-cyan);
+      border-radius: 10px;
+    }
+    .container:hover .overlay {
+      opacity: 1;
+    }
+
+    .icon {
+      color: white;
+      font-size: 100px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .view:hover, .view:active {
+      color: var(--very-dark-blue-line);
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+    <div class="container">
+      <img id="nft-picture" src="./images/image-equilibrium.jpg" alt="picture of the NFT">
+      <div class="overlay">
+        <a href="" class="icon" aria-hidden="true">
+          <img class="view" src="./images/icon-view.svg" alt="">
+        </a>
+      </div>
+    </div>
+    <h1 class="name">
+      <a href="">
+        Equilibrium #3429
+      </a>
+    </h1>
+    <p class="desc">Our Equilibrium collection promotes balance and calm.</p>
+    <div class="sales">
+      <div class="price">
+        <div aria-hidden="true"><img src="./images/icon-ethereum.svg" alt=""></div>
+        <p>0.041 ETH</p>
+      </div>
+      <div class="time">
+        <div aria-hidden="true"><img src="./images/icon-clock.svg" alt=""></div>
+          <p>3 days left</p>
+      </div>
+    </div>
+    <hr class="solid">
+    <div class="creator">
+      <img src="./images/image-avatar.png" alt="picture of the artist">
+        <p>Creation of <a href="">Jules Wyvern</a></p>
+    </div>
+  </main>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://www.frontendmentor.io/profile/Kekoeur">Kekoeur</a>.
+    </div>
+  </footer>
+</body>
+</html>
